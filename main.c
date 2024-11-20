@@ -1,5 +1,10 @@
 #include <stdio.h>
-
-int main(int, char**){
-    printf("Hello, from DataStructure_C!\n");
+#include <string.h>
+#define STR_SIZE 20
+int main(int, char **)
+{
+    char str[STR_SIZE] = "Hello";
+    printf("%d\n", strlen(str));
+    printf("sizeof %d\n", sizeof(str));
+    return 0;
 }
