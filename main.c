@@ -2,17 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 #define STR_SIZE 10
-char *mygets(FILE *stream);
+char *m_getline(FILE *stream);
 int main(int, char **)
 {
-    char *str = mygets(stdin);
+    char *str = m_getline(stdin);
     puts(str);
 
     free(str);
     return 0;
 }
 
-char *mygets(FILE *stream)
+char *m_getline(FILE *stream)
 {
     long long cur = 0;
     int size = 5;
@@ -26,7 +26,7 @@ char *mygets(FILE *stream)
         }
         else
         {
-            size += 5;
+            size++;
             str = (char *)realloc(str, size);
             str[cur] = ch;
         }
